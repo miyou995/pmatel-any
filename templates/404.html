@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+{%  block title %}
+PMATEL | page d'erreur
+{% endblock title %} 
+{% block content %}
+<div class="container jumbotron bg-dark">
+    <h1 class="display-4 text-danger">Erreur 404 !</h1>
+    <p class="lead text-white">Cette page n'existe pas.</p>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-light btn-lg" href="{% url 'index' %}" role="button">Page d'acceuil</a>
+    </p>
+  </div>
+{% endblock content %}

@@ -1,0 +1,58 @@
+
+
+.service_area .container .row {
+
+  justify-content: space-around;
+}
+
+
+
+/* line 7, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_service.scss */
+.me
+.service_area .metier {
+  display: table;
+  background-color: #fff;
+  color: black;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  margin-bottom: 50px;
+  border-radius: 8px;
+  border: 3px solid black;
+}
+.service_area .metier:hover {
+  /* background-color:rgba(41, 94, 175, 0.4); */
+  color: #FF3414;
+  border: 3px solid #FF3414;
+}
+.service_area .metier:hover h3{
+  color: #FF3414;
+}
+.service_area .metier h3{
+  display: table-cell;
+ vertical-align: middle!important;
+}
+
+/* la marque */
+
+.produits img{
+  width: auto;
+}
+/* .service_area img {
+  display: table;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  margin-bottom: 50px;
+  border-radius: 8px;
+  border: 3px solid black;
+} */
+
+
+
+
+
+.produits .boxed-btn3{
+  position: absolute;
+  z-index: 1!important;
+}

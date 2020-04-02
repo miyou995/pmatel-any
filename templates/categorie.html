@@ -1,0 +1,64 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block title %} PMATEL {% endblock title %}
+{% block staticfiles %}
+<link rel="stylesheet" href="{% static 'css/added.css' %}">
+{% endblock staticfiles %}
+
+{% block content %}
+
+<center><h1 class="m- text-dark3"> {{secteur.nom}}</h1> </center>
+<h2 class="text-danger text-center m-4">Selectionné une catégorie</h2>
+    
+<!-- Les categories  -->
+<div class="container">
+    <div class="row ">
+        {% if categories %}
+            {% for categorie in categories %}
+            <div class=" col- col-sm-6 col-xl-3  d-flex ">
+                <div class="overflow-hidden col-4" >
+                    <img class="img-fluid rounded-circle w-100 "  src="{{categorie.image.url}}" alt="cable glold">
+                </div>
+                <div class=" col-8">
+                    <h5 class="mt-2"><a class="boxed-btn3-line btn-block p-2 align-middle" href="{% url 'categorie' slug=categorie.slug %} ">{{categorie.nom}}</a></h5>
+                </div>
+            </div>
+                <!-- <div class="card border-0 col-10 col-sm-6 col-xl-3 m-3">
+                    <img class="item-img img-fluid mb-1"  src="{{categorie.image.url}}" alt="">
+                    <a class="px-0 boxed-btn3-line btn-block text-center"  href="#">{{categorie.nom}}</a>
+                </div> -->
+            {% endfor %}
+                
+            {% else %}
+            <h2>pas de Categorie</h2>
+            {% endif %}
+        
+    </div>
+</div>
+    <!-- / Les categories  -->
+
+
+<!-- listes des produits  -->
+<div class="container">
+    <h2 class="text-danger text-center m-4">Tous les produits</h2>
+    <div class="row ">
+        {% for produit in produits %}
+            <div class="col- col-sm-4 col-lg-3 my-2">
+                <div class="card border border-danger h-100">
+                    <a class="justify-content-center" href="{% url 'produit_detail' produit.slug %} ">
+                        <img class="ml-5 mt-3 img-fluid" src="{{produit.image.url}}" width="150" alt="{{produit.nom}}">
+                        <div class="card-body">
+                            <h6 class="text-center">{{produit.nom}}</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

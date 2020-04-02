@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Distributeur de {{marque.nom}}
+{% endblock title %}
+
+{% block content %}
+
+
+<div id="produits" class="container">
+    <h1 class="text-center text-danger m-lg-5">{{marque.nom}}</h1>
+    <div class="row justify-content-center d-flex">
+        {% if produits_marque %}
+            {% for produit in produits_marque %}
+                <div class="col-6  col-lg-3 my-2">
+                    <div class="card border border-danger h-100">
+                        <a class="justify-content-center" href="{% url 'produit_detail' produit.slug %} ">
+                            <img class="ml-5 mt-3 img-fluid" src="{{produit.image.url}}" width="150" alt="{{produit.nom}}">
+                            <div class="card-body">
+                                <h6 class="text-center">{{produit.nom}}</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% else %}
+                <h3 class="text-uppercase text-danger">Pas de produit</h3>
+            {% endif %}
+    </div>
+</div>
+{% endblock content %}
+
+
+
+

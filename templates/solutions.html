@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% static "img" as baseUrl %}
+{% block title %}
+  PMATEL propose des solutions en domotique 
+{% endblock title %}
+
+{% block content %}
+  
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Nos Solutions</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+  <div class="container">
+      <div class="row d-flex">
+        {% for solution in solutions %}
+            <div class="col- col-sm-4 col-lg-3 my-2">
+                <div class="card border border-danger h-100">
+                    <a class="justify-content-center" href="{% url 'solution_detail' slug=solution.slug %} ">
+                        {% if solution.image %}
+                          
+                        <img class="ml-5 mt-3 img-fluid" src="{{solution.image.url}}" width="150" alt="{{solution.nom}}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h6 class="text-center">{{solution.nom}}</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+  </div>
+    
+    <!-- contact_action_area  -->
+    <div class="contact_action_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-md-6">
+                    <div class="action_heading">
+                        <p>Après plusieurs années dans la distribution de matériels électriques de grandes marques, notre expérience nous a impliqués dans la prescription et le conseil auprès de notre clientèle de plus en plus soucieuse de la qualité et rapidité d’exécution. Notre start up se compose de structures jeunes, dynamiques et motivées.</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-6">
+                    <div class="call_add_action">
+                        <div class="boxed-btn3"><a href="tel:023 57 99 24"> <i class="fa fa-phone mr-2"></i> 023 57 99 24</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /contact_action_area  -->
+
+  
+
+{% endblock content %}
+  

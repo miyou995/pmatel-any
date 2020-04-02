@@ -1,0 +1,37 @@
+<!--Pagination bas-->
+{% if page_obj.has_previous or page_obj.has_next %}
+    <nav  class="blog-pagination justify-content-center d-flex mb-5">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                
+            <li class="page-item ">
+                <a href="?page={{ page_obj.previous_page_number }}#produits" class="btn page-link bg-dark text-danger" aria-label="previous">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"></li>          
+            {% endif %}
+            
+                <!-- <li class="page-item">
+                    <a class="btn page-link bg-dark text-white " >{{ page_obj.number }} sur {{ page_obj.paginator.num_pages }} </a>
+                </li> -->
+            {% for number in page_obj.paginator.page_range %}
+            <li class="page-item ">
+                <a class="btn page-link {% if page_obj.number == number %} bg-white text-dark{% else %} bg-dark text-white{% endif %}" href="?page={{number}}">{{ number }} </a>
+            </li>
+            {% endfor %}
+                {% if page_obj.has_next %}
+                
+                <li class="page-item">
+                    <a href="?page={{ page_obj.next_page_number }}#produits" class="btn page-link bg-dark text-danger" aria-label="Next">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled"></li>
+                {% endif %}
+        </ul>
+</nav>
+{% endif %}
+<!--/Pagination bas-->

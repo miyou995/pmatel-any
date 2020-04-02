@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block title %}
+  pmatel est une entreprise de distribution de matériels éléctrique 
+{% endblock title %}
+{% block staticfiles %}
+{% endblock staticfiles %}
+{% block content %}
+
+
+
+
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="slider_text text-center justify-content-center">
+                            <h1>Votre icône de qualité en matériels électriques</h1>
+                                <a class="boxed-btn3" href="{% url 'produits' %}">Découvrez nos produits</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <div class="transportaion_area">
+        <div class="container">
+            <div class="row">
+                {% for secteur in secteurs %}
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_transport ">
+                            <div class="d-block">
+                                <a href="{% url 'secteur' slug=secteur.slug %}">
+                                    <img src="{{secteur.image.url}}" width="100" alt="{{secteur.nom}}">
+                                </a>
+                            </div>
+                            <div class="d-block ">
+                                <h3><a href="{% url 'secteur' slug=secteur.slug %}"> 
+                                      {{secteur.nom}}
+                                 </a></h3>
+                            </div>  
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="chose_area mb-5">
+        <div class="container">
+            <div class="features_main_wrap">
+                <div class="row  align-items-center">
+                    <div class="col-xl-5 col-lg-5 col-md-6">
+                        <div class="about_image">
+                            <img src="{% static 'img/gamme_3.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="features_info">
+                            <h3>Découvrez nos produits</h3>
+                            <p>Après plusieurs années dans la distribution de matériels électriques <strong> PMATEL </strong> Dispose aujourd'hui d'une gamme complète de matériels électriques
+                            </p>
+                            <ul>
+                                {% for secteur in secteurs %}
+                                <li><a class="text-uppercase" href="{% url 'secteur' slug=secteur.slug %}"> {{secteur.nom}} </a></li>
+                                {% endfor %}
+                                
+                            </ul>
+                            <div class="about_btn">
+                                <a class="boxed-btn3-line text-uppercase" href="{% url 'produits' %}">découvrir nos produits</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chose_area mb-5">
+        <div class="container">
+            <div class="features_main_wrap">
+                <div class="row  align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="features_info">
+                            <h3>Découvrez nos Solutions</h3>
+                            <p>Pour les solutions électrique <strong> PMATEL </strong> est à jours avec la téchnologie et met a disposition de ces clients : 
+                            </p>
+                            <div class="about_btn">
+                                {% for solution in solutions %}
+                                    <a class="boxed-btn3-line btn-block text-uppercase" href="{% url 'solution_detail' solution.slug %}">{{solution.nom}}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-6">
+                        <div class="about_image">
+                            <img src="{% static 'img/gamme_5.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+  
+    
+    <!-- contact_action_area  -->
+    <div class="contact_action_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-md-6">
+                    <div class="action_heading">
+                        <h3> sûr et sécuriser à 100%</h3>
+                  
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-6">
+                    <div class="call_add_action">
+                        <a href="tel:0550 39 00 71" class="boxed-btn3">+ 213 550 39 00 71</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /contact_action_area  -->
+   
+    {% endblock content %}

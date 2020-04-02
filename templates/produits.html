@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block title %}
+Matériels de
+{% for secteur in secteurs %}
+ {{secteur.nom}} |
+{% endfor %}
+en Algérie
+{% endblock title %}
+{% block staticfiles %}
+<link rel="stylesheet" href="{% static 'css/added.css' %}">
+{% endblock staticfiles %}
+
+{% block content %}
+
+<center><h1 class="m-5 text-danger"> Vous chercher un produit pour quel utilisation ?</h1> </center>
+<div class="transportaion_area">
+    <div class="container">
+        <div class="row d-flex">
+            {% for secteur in secteurs %}
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_transport ">
+                        <div class="d-block">
+                            <a href="{% url 'secteur' slug=secteur.slug %}">
+                                <img src="{{secteur.image.url}}" width="100" alt="{{secteur.nom}}">
+                            </a>
+                        </div>
+                        <div class="d-block ">
+                            <h3><a href="{% url 'secteur' slug=secteur.slug %}"> 
+                                  {{secteur.nom}}
+                             </a></h3>
+                        </div>  
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<h2 class="text-center text-danger mb-4">Tous les produits</h2>
+<!-- listes des produits  -->
+<div id="produits" class="container">
+    <div class="row ">
+        {% if produits %}
+            {% for produit in produits %}
+                <div class="col- col-sm-4 col-lg-3 my-2">
+                    <div class="card border border-danger h-100">
+                        <a class="justify-content-center" href="{% url 'produit_detail' produit.slug %} ">
+                            <img class="ml-5 mt-3 img-fluid" src="{{produit.image.url}}" width="150" alt="{{produit.nom}}">
+                            <div class="card-body">
+                                <h6 class="text-center">{{produit.nom}}</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% else %}
+                <h3>Pas de produit</h3>
+            {% endif %}
+    </div>
+</div>
+{% include "_pagination.html" %}
+
+{% endblock %}

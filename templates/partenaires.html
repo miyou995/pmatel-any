@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block title %}
+  Les partenaire de PMATEL
+{% endblock title %}
+
+{% block content %}
+        <!-- bradcam_area  -->
+        <div class="bradcam_area bradcam_bg_1 mb-4">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="bradcam_text text-center">
+                            <h1 class="text-white">Nos partenaires</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+            <!--/ bradcam_area  -->
+
+<h2 class="text-center m-4 text-primary">Ils nous ont fais confiance</h2>
+<div  class="partenaires container my-5 ">
+    <div class="row">
+        {% for client in clients %}
+            <div class="col-4 col-md-3 col-lg-2 m-0">
+                <img class="img-fluid" src="{{client.logo.url}} " alt="{{client.nom}}" >               
+            </div>
+        {% endfor %}
+    </div>
+    <hr>
+</div>
+<h2 class="text-center m-4 text-primary ">Nos partenaires</h2>
+<div class="partenaires container my-5">
+    <div class="row">
+        {% for fournisseur in fournisseurs %}
+            <div class="col-4 col-md-3 col-lg-2 m-0">
+           
+                    <img class="img-fluid" src="{{fournisseur.logo.url}} " alt="{{fournisseur.nom}}" >
+            
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+  
+    {% endblock content %}
+

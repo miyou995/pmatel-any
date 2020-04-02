@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% static "img" as baseUrl %}
+   {% block title %}
+  vente et distribution d'{{solution.nom}}
+   {% endblock title %}
+{% block content %}
+ 
+     <!-- bradcam_area  -->
+     <div class="bradcam_area bradcam_bg_1">
+         
+             <div class="container">
+                 <div class="row">
+                     <div class="col-xl-12">
+                         <div class="text-center">
+                             <h1 class="text-white">{{solution.nom}}</h1>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="container mt-3 mb-7">
+            <div class="row d-flex justify-content-center">
+               
+                <div class="col- col-md-5">
+                    <h3 class="text-dark" >{{solution.nom}}</h3>
+                    <hr class="m-0">
+                    <p class="mt-2 text-uppercase">marque: {{solution.marque}} </p>
+                    {% if solution.petit_text != '' %}
+                      <p>{{solution.petit_text}}</p>
+                      <hr class="m-0">
+                    {% endif %}
+                    {% if solution.image %}
+                    <div class="item overflow-hidden">
+                        <a href="{{solution.image.url}}" data-lightbox="image-{{solution.pk}}">
+                        <img class="img-thumbnail" width="300" src="{{solution.image.url}}"  alt="{{solution.nom}}">
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col- col-md-6 ">
+                  
+                    <p class="mt-4">{{solution.description}}</p>
+                </div>
+                
+            </div>
+        </div>
+              
+{% endblock content %}
+  

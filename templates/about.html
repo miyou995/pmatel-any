@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block title %}
+PMATEL est un distributeur de matériel electrique en Algérie
+{% endblock title %}
+{% block content %}
+  
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="bradcam_text text-center">
+                            <h3>About Us</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ bradcam_area  -->
+        <div class="service_details_area">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                aria-labelledby="v-pills-home-tab">
+                                <div class="service_details_info">
+                                    <h3>Qui somme nous ?</h3>
+                                    <p>Créée en 2011, Eurl Pluriel de matériels électriques (PMATEL) est une société spécialisée dans la distribution de matériels électriques pour les besoins de l’industrie et bâtiment</p>
+                                        <p class="h2">Là où il y a un problème, nous apportons toujours une solution, le cas contraire, plus de confort.
+                                        </p>
+                                    <p>
+                                        Après plusieurs années dans la distribution de matériels électriques de grandes marques, notre expérience nous a impliqués dans la prescription et le conseil auprès de notre clientèle de plus en plus soucieuse de la qualité et rapidité d’exécution. Notre start up se compose de structures jeunes, dynamiques et motivées.
+                                    </p>
+                                </div>
+                                <div class="service_thumb">
+                                    <h3>Qui somme nous ?</h3>
+                                    <img class="img-fluid" src="{% static 'img/about/camehome.jpg' %}" alt="">
+                                </div>
+                                
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+     <!-- chose_area  -->
+     <div class="chose_area ">
+        <div class="container">
+            <div class="features_main_wrap">
+                <div class="row  align-items-center">
+                    <div class="col-xl-5 col-lg-5 col-md-6">
+                        <div class="about_image">
+                            <img src="{% static 'img/about/about.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="features_info">
+                            <h3>Pourquoi choisir PMATEL ?</h3>
+                           
+                            <ul>
+                                <li><a href="{% url 'partenaires' %}">Visitez nos références</a></li>
+                                <li> Duis aute irure dolor in reprehenderit in voluptate. </li>
+                                <li> Voluptatem quia voluptas sit aspernatur.</li>
+                            </ul>
+
+                            <div class="about_btn">
+                                <a class="boxed-btn3-line" href="{% url 'about' %}">About Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ chose_area  -->
+
+ <!-- counter_area  -->
+ <div class="counter_area">
+    <div class="container">
+        <div class="offcan_bg">
+            <div class="row">
+                <div class="col-xl-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <h3> <span class="counter">22</span> <span>+</span> </h3>
+                        <p>ans d'éxpériance</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <h3> <span class="counter">97</span> <span>+</span> </h3>
+                        <p>Projet réaliser</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <h3> <span class="counter">2342</span></h3>
+                        <p>client satisfait</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <h3> <span class="counter">3245</span></h3>
+                        <p>Business Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /counter_area  -->
+      <!-- contact_action_area  -->
+      <div class="contact_action_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-md-6">
+                    <div class="action_heading">
+                        <h3>sûr et sécuriser à 100%</h3>
+                        <p>Des avantages qui deviennent des solutions</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-6">
+                    <div class="call_add_action">
+                        <a href="#" class="boxed-btn3">+ 213 550 39 00 71</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /contact_action_area  -->
+
+ 
+    <!-- testimonial_area  -->
+    <div class="testimonial_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7">
+                    <div class="testmonial_active owl-carousel">
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="quote">
+                                    <img src="img/svg_icon/quote.svg" alt="">
+                                </div>
+                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
+                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="img/logo.png" height="35" alt="">
+                                    </div>
+                                    <h3>Mourad SEMMAR</h3>
+                                    <span>Business Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="quote">
+                                    <img src="img/svg_icon/quote.svg" alt="">
+                                </div>
+                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
+                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="img/logo.png" height="35" alt="">
+                                    </div>
+                                    <h3>Mourad SEMMAR</h3>
+                                    <span>Business Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="quote">
+                                    <img src="img/svg_icon/quote.svg" alt="">
+                                </div>
+                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
+                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="img/logo.png" height="35" alt="">
+                                    </div>
+                                    <h3>Mourad SEMMAR</h3>
+                                    <span>Business Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- /testimonial_area  -->
+    
+    {% endblock content %}
