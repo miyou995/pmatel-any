@@ -15,43 +15,29 @@ en Algérie
 
 {% block content %}
 
-<center><h1 class="m-5 text-danger"> Vous chercher un produit pour quel utilisation ?</h1> </center>
-<div class="transportaion_area">
-    <div class="container">
-        <div class="row d-flex">
-            {% for secteur in secteurs %}
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_transport ">
-                        <div class="d-block">
-                            <a href="{% url 'secteur' slug=secteur.slug %}">
-                                <img src="{{secteur.image.url}}" width="100" alt="{{secteur.nom}}">
-                            </a>
-                        </div>
-                        <div class="d-block ">
-                            <h3><a href="{% url 'secteur' slug=secteur.slug %}"> 
-                                  {{secteur.nom}}
-                             </a></h3>
-                        </div>  
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+<center><h1 class="m-5 text-danger"> Quel produit cherchez-vous ?</h1> </center>
 
 
-<h2 class="text-center text-danger mb-4">Tous les produits</h2>
+
 <!-- listes des produits  -->
 <div id="produits" class="container">
-    <div class="row ">
-        {% if produits %}
+    {% if produits %}
+    {% if produits.all %}
+      
+    <h2 class="text-center text-danger mb-4">Tous les produits {{q}}</h2>
+    {% endif %}
+        <div class="row ">
             {% for produit in produits %}
-                <div class="col- col-sm-4 col-lg-3 my-2">
+                <div class="col- col-sm-4 col-lg-3 my-2 d-block">
                     <div class="card border border-danger h-100">
-                        <a class="justify-content-center" href="{% url 'produit_detail' produit.slug %} ">
-                            <img class="ml-5 mt-3 img-fluid" src="{{produit.image.url}}" width="150" alt="{{produit.nom}}">
-                            <div class="card-body">
-                                <h6 class="text-center">{{produit.nom}}</h6>
+                        <a href="{% url 'produit_detail' produit.slug %} ">
+                            <div class="d-flex">
+                                <img class="ml-auto mr-auto mt-3" src="{{produit.image.url}}" height="100" alt="{{produit.nom}}">
+                            </div>
+                            <div class="m-3">
+                                <footer>
+                                    <h6 class="text-center">{{produit.nom}}</h6>
+                                </footer>
                             </div>
                         </a>
                     </div>

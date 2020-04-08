@@ -74,7 +74,7 @@
             </div>
 <!--/TOP header-->
 
-            <div id="sticky-header" class="main-header-area justify-content-center">
+            <div id="sticky-header" class="main-header-area justify-content-center mb-5">
                 <div class="container">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
@@ -91,12 +91,12 @@
                                         <ul id="navigation">
                                             <li><a  href="{% url 'index' %}">Home</a></li>
                                             <li><a href="{% url 'about' %}">about</a></li>
-                                            <li><a href="{% url 'produits' %}"> Nos produits </a></li>
+                                            <li><a href="{% url 'catalogue' %}"> Catalogue </a></li>
                                             <li class="pointer">
                                                  <a  href="{% url 'solutions_list' %}"> Nos solutions <i class="ti-angle-down"></i> </a> 
                                                 <ul class="submenu">
                                                     {% for solution in solutions %}
-                                                        <li><a href="{% url 'solution_detail' slug=solution.slug %}">{{solution.titre}}</a></li>
+                                                        <li><a href="{% url 'solution_detail' slug=solution.slug %}">{{solution.nom}}</a></li>
                                                     {% endfor %}                                                   
                                                     <li><a href="{% url 'hotel' %}">Domotique Hôtel</a></li>
                                                 </ul>
@@ -200,7 +200,7 @@
                             <ul>
                                 <li><a href="{% url 'hotel' %}">Domotique Hôtel</a></li>
                                 {% for solution in solutions %}
-                                <li><a href="{% url 'solution_detail' slug=solution.slug %}">{{solution.titre}}</a></li>
+                                <li><a href="{% url 'solution_detail' slug=solution.slug %}">{{solution.nom}}</a></li>
                                 {% endfor %}  
                             </ul>
                         </div>

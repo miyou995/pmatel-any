@@ -170,7 +170,7 @@ class ProduitsList(ListView):
         query = self.request.GET.get('q')
         if query != None:
             produits = Produit.objects.filter(
-               Q(nom__icontains=query) | Q(categorie__nom__icontains= query)
+               Q(nom__icontains = query) | Q(categorie__nom__icontains = query)
                 )
         else:
             produits = Produit.objects.all()
@@ -220,11 +220,24 @@ class CategorieList(ListView):
         context = super(CategorieList, self).get_context_data(**kwargs)
         context['categories'] = Categorie.objects.filter(secteur= self.secteur)
         context['secteur'] = self.secteur
+        context['solutions'] = Solution.objects.all()
         context['produits'] = Produit.objects.all()
         return context
 
 
+class Catalogue(TemplateView):
+    template_name= 'catalogue.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['solutions'] = Solution.objects.all()
+        context['categories'] = Categorie.objects.all()
+        context['habitat'] = Categorie.objects.filter(secteur__id__exact = 1 )
+        context['industrie'] = Categorie.objects.filter(secteur__id__exact = 2 )
+        context['installations'] = Categorie.objects.filter(secteur__id__exact = 3 )
+        context['marques'] = Marque.objects.exclude(produit__isnull=True)
 
+        return context    
 
 
 

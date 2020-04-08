@@ -10,7 +10,7 @@ class Valeur(models.Model):
         return self.titre
 
 class Solution(models.Model):
-    nom       = models.CharField(max_length=70)
+    nom         = models.CharField(max_length=70)
     slug        = models.CharField(max_length=70)
     petit_text  = models.CharField(max_length=200, blank = True)
     marque      = models.CharField(max_length=70)
