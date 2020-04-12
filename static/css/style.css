@@ -800,14 +800,10 @@ h3 {
 }
 
 /* line 1, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_slider.scss */
-.slider_bg_1 {
-  background-image: url(../img/banner/banner.jpg);
-}
+/* .slider_bg_1 {
+  background-image: url(../img/about/banner.jpg);
+} */
 
-/* line 4, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_slider.scss */
-.slider_bg_2 {
-  background-image: url(../img/banner/banner_2.png);
-}
 
 /* line 7, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_slider.scss */
 .slider_area {
@@ -1377,7 +1373,7 @@ a.cat {
 
 /* line 2, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
 .testimonial_area {
-  background-image: url(../img/banner/testmonial.png);
+  background-image: url(../img/about/about.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -7154,7 +7150,7 @@ body#hotel h2{
   margin-right: 14px;
 }
 
-
+slider_text
 
 /* line 166, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_blog_part.scss */
 .blog_part .single-home-blog .card ul li span {

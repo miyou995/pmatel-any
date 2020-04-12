@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block title %}
+Matériels de
+{% for secteur in secteurs %}
+ {{secteur.nom}} |
+{% endfor %}
+en Algérie
+{% endblock title %}
+{% block staticfiles %}
+<link rel="stylesheet" href="{% static 'css/added.css' %}">
+{% endblock staticfiles %}
+
+{% block content %}
+
+<!-- <center><h1 class="m-5 text-danger"> Vous chercher un produit pour quel utilisation ?</h1> </center>
+<div class="transportaion_area">
+    <div class="container">
+        <div class="row d-flex">
+            {% for secteur in secteurs %}
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_transport ">
+                        <div class="d-block">
+                            <a href="{% url 'secteur' slug=secteur.slug %}">
+                                <img src="{{secteur.image.url}}" width="100" alt="{{secteur.nom}}">
+                            </a>
+                        </div>
+                        <div class="d-block ">
+                            <h3><a href="{% url 'secteur' slug=secteur.slug %}"> 
+                                  {{secteur.nom}}
+                             </a></h3>
+                        </div>  
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div> -->
+<center><h1 class="m- text-dark3"> {{secteur.nom}}</h1> </center>
+<h2 class="text-danger text-center m-4">LE CATALOGUE</h2>
+    
+<!-- Les categories  -->
+<div class="container">
+    <div class="d-flex m-4">
+        <div class="mr-3">
+            <a href="{% url 'secteur' slug='habitat' %}">
+                <img src="{% static '/img/icon/home.svg' %}" width="35" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="{% url 'secteur' slug='habitat' %}">
+                <h2 style="color: #016678;">Habitat</h2>
+            </a>
+        </div>
+    </div>
+        <div class="row">
+            {% for categorie in habitat %}
+                <div class=" col- col-sm-6 col-xl-3  d-flex ">
+                    <div class="overflow-hidden col-4" >
+                        <img class="img-fluid rounded-circle w-100 "  src="{{categorie.image.url}}" alt="cable glold">
+                    </div>
+                    <div class=" col-8">
+                        <h5 class="mt-2"><a class="boxed-btn3-line btn-block p-2 align-middle" href="{% url 'categorie' slug=categorie.slug %}" >{{categorie.nom}}</a></h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex m-4">
+                <div class="mr-3">
+                    <a href="{% url 'secteur' slug='industrie' %}">
+                        <img src="{% static '/img/icon/industrie.svg' %}" width="35" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'secteur' slug='industrie' %}">
+                        <h2 style="color: #295eaf;">Industrie</h2>
+                    </a>
+                </div>
+        </div>
+        <div class="row">
+            {% for categorie in industrie %}
+                <div class=" col- col-sm-6 col-xl-3  d-flex ">
+                    <div class="overflow-hidden col-4" >
+                        <img class="img-fluid rounded-circle w-100 "  src="{{categorie.image.url}}" alt="cable glold">
+                    </div>
+                    <div class=" col-8">
+                        <h5 class="mt-2"><a class="boxed-btn3-line btn-block p-2 align-middle" href="{% url 'categorie' slug=categorie.slug %} ">{{categorie.nom}}</a></h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex m-4">
+            <div class="mr-3">
+                <a href="{% url 'secteur' slug='cables-installations' %}">
+                    <img src="{% static '/img/icon/cable.svg' %}" width="35" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'secteur' slug='cables-installations' %}">
+                    <h2 style="color: #8465a7;">Câbles & Installations</h2>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            {% for categorie in installations %}
+                <div class=" col- col-sm-6 col-xl-3  d-flex ">
+                    <div class="overflow-hidden col-4" >
+                        <img class="img-fluid rounded-circle w-100 "  src="{{categorie.image.url}}" alt="cable glold">
+                    </div>
+                    <div class=" col-8">
+                        <h5 class="mt-2"><a class="boxed-btn3-line btn-block p-2 align-middle" href="{% url 'categorie' slug=categorie.slug %} ">{{categorie.nom}}</a></h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+</div>
+
+{% endblock %}
